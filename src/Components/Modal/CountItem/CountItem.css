@@ -1,0 +1,42 @@
+.count-wrapper{
+	display:flex;
+	justify-content: space-between;
+	margin: 10px 0px;
+	color: black;
+}
+
+.count-input{
+	display: inline-block;
+	border: none;
+	width: 48px;
+	height: 40px;
+	background-color: #ba895c;
+	text-align: center;
+	color: #fff;
+	font-family: BlockProCondensed,Arial,sans-serif;
+	font-size: 16px;
+}
+
+.button-count{
+	display: inline-block;
+	vertical-align: top;
+	height: 40px;
+	width: 34px;
+	position: relative;
+	background-color: #916b48;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+	border: none;
+}
+
+.button-plus{
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+
+}
+
+.button-minus{
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px
+}

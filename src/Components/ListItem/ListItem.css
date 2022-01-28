@@ -6,6 +6,17 @@
 }
 
 .list-item{
-	width: 400px;
-	height: 150px;
+	position: relative;
+	width: 250px;
+	color:white; 
+	text-align: center;
 }
+.list-item:hover {
+	cursor: pointer;
+}
+
+.list-item img{
+	width: 250px;
+	height: 200px;
+}
+

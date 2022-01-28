@@ -1,4 +1,8 @@
 .main-menu{
 	background-color: #ccc;
-	margin-top: 80px;
+	padding: 40px 30px 0 30px;
+	margin-left: 380px;
+}
+.main-menu__title{
+	margin-top: 60px;
 }

@@ -1,0 +1,40 @@
+.modal{
+position: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,.5);
+z-index: 20;
+}
+
+.modal-section{
+	background-color: white;
+	width: 400px;
+	border-radius: 15px;
+	min-height: 400px;
+	padding: 0 10px 20px 20px;
+}
+
+.modal-section__img{
+		width: 100%;
+		height: 240px;
+}
+
+.modal-section__info{
+	color: black;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-family: 'Pacifico',cursive;
+	font-size: 16px;
+	font-weight: 700;
+}
+ 
+.modal-section__price{
+	display:flex;
+	justify-content: space-between;
+}

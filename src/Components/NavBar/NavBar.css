@@ -4,17 +4,18 @@ top: 0;
 left: 0;
 z-index: 999;
 height: 80px;
-width: 100vw;
+width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 15px;
-background-color: #299B01;
-color: white;
+background-color: #f2ebe3;
+color: black;
 }
 
 .navBar-logo{
 	display: flex;
+	align-items: center;
 }
 
 .navBar-logo h1{
@@ -29,14 +30,16 @@ color: white;
 .navBar-button{
 	position: relative;
 	cursor: pointer;
-	display: block;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	padding: 0;
 	margin-right: 100px;
 	text-transform: uppercase;
 	font-family: inherit;
 	font-size: 16px;
 	letter-spacing: .5px;
-	color: white;
+	color: black;
 	background-color: transparent;
 	border: none;
 	outline: none;
