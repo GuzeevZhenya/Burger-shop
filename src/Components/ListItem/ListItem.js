@@ -10,7 +10,7 @@ export const ListItem = ({ itemList, setOpenItem }) => {
 					<img src={item.img} alt={item.name}
 						onClick={() => setOpenItem(item)} />
 					<p>{item.name}</p>
-					<p>{item.price.toLocaleString('ru-Ru',{style:'currency',currency:'RUB'})}</p>
+					<p>{item.price.toLocaleString('en-US',{style:'currency',currency:'EUR'})}</p>
 				</li>
 			))}
 		</ul>		

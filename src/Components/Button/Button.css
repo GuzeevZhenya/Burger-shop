@@ -21,3 +21,9 @@
 	color: #299B01;
 	border-color: #299B01;
 }
+
+.button:disabled {
+	color: #bbb;
+	border-color: aaa;
+	background-color: red;
+}

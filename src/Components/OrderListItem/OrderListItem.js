@@ -15,14 +15,17 @@ const buttonStyle = {
 	backgroundSize:'cover'
 }
 
-export const OrderListItem = ({ orders })=> {
+export const OrderListItem = ({ orders,index,deleteItem }) => {
+	
+	const topping = orders.topping.filter(item => item.checked).map(item=>item.name).join(', ');
 	return (
 		<>
 			<li className='order-item'>
-				<span className='order-name'>{orders.name}</span>
+				<span className='order-name'>{orders.name}-{orders.choice}</span>
 				<span>{orders.count}</span>
 				<span className='order-price'>{totalPriceItems(orders).toLocaleString('ru-Ru', { style: 'currency', currency: 'RUB' })}</span>
-					<button style={buttonStyle}></button>
+				<button style={buttonStyle} onClick={()=>deleteItem(index)}></button>
+					{topping && <div className='order-toppings'>{topping}</div>}
 			</li>
 		</>
 	);

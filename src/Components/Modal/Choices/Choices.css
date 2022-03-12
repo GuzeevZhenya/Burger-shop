@@ -1,0 +1,16 @@
+.choice-wrapper{
+	max-width: 500px;
+	margin: 0 auto;
+	column-count: 2;
+	column-gap: 15px;
+}
+
+.choice-input{
+margin-right: 5px;
+cursor: pointer;
+}
+
+.choice-label{
+	cursor: pointer;
+	display: block;
+}

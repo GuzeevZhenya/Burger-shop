@@ -5,12 +5,20 @@ import { CountItem } from './CountItem/CountItem';
 import { useCount } from '../../Hooks/useCount';
 import { Toppings } from './Toppings/Toppings';
 import { useTopping } from '../../Hooks/useTopping';
+import { useChoices } from '../../Hooks/useChoices';
+import { Choices } from './Choices/Choices';
 
-export const totalPriceItems = (order) => order.price * order.count;
+export const totalPriceItems = (order) => {
+  const countTopping = order.topping && order.topping.filter((item) => item.checked).length;
+  const priceTopping = order.price * 0.1 * countTopping;
+
+  return (order.price + priceTopping) * order.count;
+};
 
 export default function Modal({ openItem, setOpenItem, orders, setOrders }) {
   const counter = useCount();
   const toppings = useTopping(openItem);
+  const choices = useChoices(openItem);
 
   const closeModal = (e) => {
     if (e.target.classList.contains('modal')) {
@@ -22,7 +30,11 @@ export default function Modal({ openItem, setOpenItem, orders, setOrders }) {
     ...openItem,
     count: counter.count,
     topping: toppings.toppings,
+    choice: choices.choice,
   };
+
+  // console.log(order.choices,order.choice);
+  console.log(order.choices && !order.choice)
 
   const addToOrder = () => {
     setOrders([ ...orders, order ]);
@@ -41,6 +53,7 @@ export default function Modal({ openItem, setOpenItem, orders, setOrders }) {
           <CountItem {...counter} />
           <div>
             {openItem.toppings && <Toppings {...toppings} />}
+            {openItem.choices && <Choices {...choices} openItem={openItem} />}
           </div>
           <div className="modal-section__price">
             <span>Цена:</span>
@@ -52,7 +65,12 @@ export default function Modal({ openItem, setOpenItem, orders, setOrders }) {
             </span>
           </div>
 
-          <Button buttonFuntion={addToOrder} buttonName={'Добавить'} />
+          <Button
+            buttonFuntion={addToOrder}
+            disabled={order.choices && !order.choice}
+            buttonName={'Добавить'}
+          />
+          <button >ktrg</button>
         </div>
       </div>
     </div>
